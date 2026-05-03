@@ -19,6 +19,27 @@ npm run dev   # http://localhost:5174
 
 Port `5174` is used so it can run alongside the main IoT app on `5173`.
 
+## Deploying to Vercel
+
+This project ships a `vercel.json` with the SPA fallback rewrite that
+react-router needs. Two ways to deploy:
+
+**1. GitHub integration (recommended):**
+
+1. Go to [vercel.com/new](https://vercel.com/new) and import this repo.
+2. Vercel auto-detects Vite — leave defaults (build = `npm run build`,
+   output = `dist`, install = `npm install`).
+3. Click Deploy. Every push to `main` redeploys; PRs get preview URLs.
+
+**2. Vercel CLI:**
+
+```bash
+npm i -g vercel
+vercel login    # interactive
+vercel          # first run — sets up + deploys preview
+vercel --prod   # promote to production
+```
+
 ## Stack
 
 - Vite + React 18 + TypeScript
