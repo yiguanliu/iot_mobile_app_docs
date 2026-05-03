@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Docs-chrome tokens — constant across app themes ──────────────────────── */
+
+:root {
+  --docs-bg:        #FFFFFF;
+  --docs-fg:        #0A0A0A;
+  --docs-muted:     #71717A;
+  --docs-border:    #E4E4E7;
+  --docs-card:      #FAFAFA;
+  --docs-code-bg:   #0A0A0A;
+  --docs-accent:    #18181B;
+}
+
+/* ─── Nothing's NDot family (self-hosted; falls back to Doto) ────────────── */
+
+@font-face {
+  font-family: 'Ndot 55';
+  src: url('/fonts/ndot-55.woff2') format('woff2'),
+       url('/fonts/ndot-55.otf')   format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── App-theme defaults — Nothing pre-applied to avoid FOUC ─────────────── */
+
+:root {
+  --bg: #E5E5E5;
+  --bg-card: #FFFFFF;
+  --bg-card-dark: #F0F0F0;
+  --bg-dark: #000000;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --accent: #E5232C;
+  --accent-alt: #000000;
+  --border: transparent;
+  --font-mono: 'Ndot 55', 'Doto', 'Space Mono', 'Courier New', monospace;
+  --font-sans: 'Ndot 55', 'Doto', 'Inter', system-ui, sans-serif;
+  --font-display: 'Ndot 55', 'Doto', 'Space Mono', monospace;
+  --radius-card: 20px;
+  --radius-pill: 999px;
+  --radius-tight: 12px;
+  --card-shadow: none;
+  --card-border: none;
+}
+
+html, body {
+  background: var(--docs-bg);
+  color: var(--docs-fg);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Markdown-ish prose defaults inside docs content */
+.prose-docs h1 { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.prose-docs h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-top: 40px; padding-bottom: 8px; border-bottom: 1px solid var(--docs-border); }
+.prose-docs h3 { font-size: 18px; font-weight: 600; margin-top: 24px; }
+.prose-docs p  { font-size: 15px; color: var(--docs-fg); line-height: 1.65; margin-top: 12px; }
+.prose-docs ul { padding-left: 22px; margin-top: 12px; }
+.prose-docs li { font-size: 15px; line-height: 1.65; margin-top: 4px; }
+.prose-docs a  { color: var(--docs-fg); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--docs-muted); }
+.prose-docs a:hover { text-decoration-color: var(--docs-fg); }
+.prose-docs code:not(pre code) {
+  background: #F4F4F5;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}

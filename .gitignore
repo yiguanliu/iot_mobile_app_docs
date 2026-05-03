@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.local
+.vite/
+*.log
+.DS_Store
+.env*
+*.tsbuildinfo
+.claude/settings.local.json
