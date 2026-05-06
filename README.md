@@ -8,7 +8,6 @@ Standalone documentation site for the [Home OS IoT prototype](../iot_mobile_app/
 - **Components** — primitive UI pieces (Button, Slider, Pill Button, Scene Chip…)
 - **Blocks** — composed/grouped patterns (Scene Strip, Zone Tile…)
 
-The top-bar theme switcher (Nothing / Modern / Y2K) live-applies the active theme to every component preview on the page.
 
 ## Running
 
